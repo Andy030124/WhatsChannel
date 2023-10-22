@@ -1,25 +1,23 @@
-#include <iostream>     // for cout 
-#include <fstream>      // for ifstream & ofstream
-#include <string>       // for string object container
+#include <iostream>     // para cout 
+#include <fstream>      // para ifstream & ofstream
+#include <string>       // para contenedor de objeto string
 
 /**
-*  @brief Load a input file path into an string (file not binary)
-*  @param filepath the file path you want read 
+* @brief Carga un archivo de entrada en una cadena (archivo no binario)
+* @param filepath la ruta del archivo que desea leer 
+* @return el contenido del archivo como una cadena
 */
-std::string readFile(std::string filepath){
-    std::ifstream file{filepath}; // automatic open file
-    // return an string with the file content
-    return std::string{
-        // start into file begin
-        std::istreambuf_iterator<char>{ file },
-        // automatic end detection (EOF)
-        std::istreambuf_iterator<char>{}
-    };
+std::string readFile(const std::string& filepath) {
+    std::ifstream file(filepath); // Abrir el archivo
+    // Devolver una cadena con el contenido del archivo
+    return std::string(
+        std::istreambuf_iterator<char>(file), // Comenzar a leer desde el principio del archivo
+        std::istreambuf_iterator<char>() // Detección automática del final (EOF)
+    );
 }
 
-int main(){
+int main() {
     std::cout << readFile("./fileexample.txt") << "\n";
     return 0;
 }
-
 
