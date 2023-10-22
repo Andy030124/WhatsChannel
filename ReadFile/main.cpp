@@ -11,8 +11,10 @@ std::string readFile(const std::string& filepath) {
     std::ifstream file(filepath); // Abrir el archivo
     // Devolver una cadena con el contenido del archivo
     return std::string(
-        std::istreambuf_iterator<char>(file), // Comenzar a leer desde el principio del archivo
-        std::istreambuf_iterator<char>() // Detección automática del final (EOF)
+        // Comenzar a leer desde el principio del archivo
+        std::istreambuf_iterator<char>(file),
+        // Detección automática del final (EOF)
+        std::istreambuf_iterator<char>()
     );
 }
 
