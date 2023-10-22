@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream> // for ifstream & ofstream
-#include <vector> // for vector container
 #include <string> // for string object container
 
 // String Version
