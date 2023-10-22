@@ -1,0 +1,4 @@
+Este fichero
+se lee
+rapidamente con
+iteradores!
